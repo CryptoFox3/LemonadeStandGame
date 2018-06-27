@@ -1,0 +1,14 @@
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.csprojAssemblyReference.cache
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.csproj.CoreCompileInputs.cache
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe.config
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.pdb
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.exe
+c:\users\pghod\source\repos\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.pdb
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.csprojAssemblyReference.cache
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.csproj.CoreCompileInputs.cache
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.exe
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.pdb
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe.config
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.pdb
