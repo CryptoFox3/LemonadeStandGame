@@ -13,7 +13,7 @@ namespace LemonadeStand
         //{
         Store store = new Store();
         Player player = new Player();
-        Inventory inventory = new Inventory();
+        
         Weather weather = new Weather();
         //}
 
@@ -25,13 +25,13 @@ namespace LemonadeStand
         public void Start()
         {
             name = player.playerName();
-            inventory.SetStartMoney();
+            //Inventory inventory = player.GetInventory();
             gameDay = 1;
-            MainMenu();
+            MainMenu(/*player.inventory*/);
             
         }
 
-         public void MainMenu()
+         public void MainMenu(/*Inventory inventory*/)
         {
 
             Console.Clear();
@@ -44,19 +44,19 @@ namespace LemonadeStand
             switch (menuChoice)
             {
                 case "store":
-                    store.ShopMenu(inventory);
+                    store.ShopMenu(player);
                     Console.WriteLine();
                     Console.ReadLine();
                     MainMenu();
                     break;
                 case "inventory":
-                    inventory.ShowItems(inventory);
+                    player.inventory.ShowItems(player.inventory);
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
                     break;
                 case "money":
-                    inventory.ShowMoney(inventory);
+                    player.inventory.ShowMoney(player.inventory);
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
@@ -69,7 +69,7 @@ namespace LemonadeStand
                     break;
                 case "start day":
                     Console.WriteLine("Not yet implimented");
-                    DayPhase();
+                    DayPhase(player.inventory);
                     break;
                 default:
                     Console.WriteLine("Try again!");
@@ -93,7 +93,7 @@ namespace LemonadeStand
 
         }
 
-        public void DayPhase()
+        public void DayPhase(Inventory inventory)
         {
             if (gameDay < gameLength)
             {

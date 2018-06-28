@@ -9,6 +9,7 @@ namespace LemonadeStand
     class Customer
     {
 
+        string name;
 
 
 

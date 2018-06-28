@@ -20,7 +20,7 @@ namespace LemonadeStand
             //    name = player.name();
         }
 
-        public void ShopMenu(Inventory inventory)
+        public void ShopMenu(Player player)
         {
             Console.Clear();
             //  Console.WriteLine("Welcome to the shop " + name);
@@ -33,42 +33,42 @@ namespace LemonadeStand
             {
                 case "buy cups":
                     //Console.WriteLine();
-                    BuyCup(inventory, cupCost);
+                    BuyCup(player.inventory, cupCost);
                     Console.ReadLine();
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
                 case "buy ice":
-                    BuyIce(inventory, iceCost);
+                    BuyIce(player.inventory, iceCost);
                     Console.ReadLine();
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
                 case "buy sugar":
-                    BuySugar(inventory, sugarCost);
+                    BuySugar(player.inventory, sugarCost);
                     Console.ReadLine();
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
                 case "buy lemons":
-                    BuyLemon(inventory, lemonCost);
+                    BuyLemon(player.inventory, lemonCost);
                     Console.ReadLine();
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
                 case "inventory":
-                    inventory.ShowItems(inventory);
+                    player.inventory.ShowItems(player.inventory);
                     Console.ReadKey();
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
                 case "money":
-                    inventory.ShowMoney(inventory);
+                    player.inventory.ShowMoney(player.inventory);
                     Console.WriteLine();
                     Console.ReadKey();
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
                 case "main menu":
-                    //Game.MainMenu();
+                    //MainMenu();
                     break;
                 default:
                     Console.WriteLine("Try again!");
-                    ShopMenu(inventory);
+                    ShopMenu(player);
                     break;
             }
         }
@@ -85,7 +85,7 @@ namespace LemonadeStand
             inventory.RemoveMoney(moneyToRemove, inventory);
 
             inventory.cups = Convert.ToInt32(inventory.cups + boughtCups);
-            ShopMenu(inventory);
+            //ShopMenu(inventory);
         }
 
         public void BuyIce(Inventory inventory, double iceCost)
@@ -99,7 +99,7 @@ namespace LemonadeStand
             inventory.RemoveMoney(moneyToRemove, inventory);
 
             inventory.ice = Convert.ToInt32(inventory.ice + boughtIce);
-            ShopMenu(inventory);
+            //ShopMenu(inventory);
         }
 
         public void BuySugar(Inventory inventory, double cupCost)
@@ -113,7 +113,7 @@ namespace LemonadeStand
             inventory.RemoveMoney(moneyToRemove, inventory);
 
             inventory.cups = Convert.ToInt32(inventory.sugar + boughtSugar);
-            ShopMenu(inventory);
+            //ShopMenu(inventory);
         }
         public void BuyLemon(Inventory inventory, double cupCost)
         {
@@ -126,7 +126,7 @@ namespace LemonadeStand
             inventory.RemoveMoney(moneyToRemove, inventory);
 
             inventory.cups = Convert.ToInt32(inventory.lemon + boughtLemons);
-            ShopMenu(inventory);
+            //ShopMenu(inventory);
         }
 
 

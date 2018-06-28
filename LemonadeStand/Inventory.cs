@@ -45,7 +45,7 @@ namespace LemonadeStand
 
         public void ShowMoney(Inventory inventory)
         {
-            Console.WriteLine("You current balance is: " + inventory.money);
+            Console.WriteLine("Your current balance is: " + inventory.money);
         }
 
         public void ShowItems(Inventory inventory)
