@@ -13,6 +13,7 @@ namespace LemonadeStand
         public int ice;
         public int cups;
         public int sugar;
+        public int lemon;
         public double money;
 
 
@@ -30,39 +31,44 @@ namespace LemonadeStand
             return money = 20.00;
         }
 
-        public double AddMoney(double moneyToAdd, double money)
+        public double AddMoney(double moneyToAdd, Inventory inventory)
         {
-            return money + moneyToAdd;
+            inventory.money = inventory.money + moneyToAdd;
+            return inventory.money;
         }
 
-        public double removeMoney(double moneyToRemove, double money)
+        public double RemoveMoney(double moneyToRemove, Inventory inventory)
         {
-            return money + moneyToRemove;
+            inventory.money = inventory.money - moneyToRemove;
+            return inventory.money;
         }
 
-        public void ShowMoney()
+        public void ShowMoney(Inventory inventory)
         {
-            Console.WriteLine("You current balance is: " + money);
+            Console.WriteLine("You current balance is: " + inventory.money);
         }
 
-        public void ShowItems()
+        public void ShowItems(Inventory inventory)
         {
-            Console.WriteLine("Your current inventory is: \n Cups: " + cups + "\n Ice: " + ice + "\n Sugar: " + sugar + "\n Lemons");
+            Console.WriteLine($"Your current inventory is: \n Cups: {cups}\n Ice: {ice}\n Sugar: {sugar}\n Lemons {lemon}");
         }
-
-        
-
-
-
-
-
-
-
-
-
-
 
     }
-
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+
+        
+         

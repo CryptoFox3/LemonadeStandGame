@@ -8,10 +8,15 @@ namespace LemonadeStand
 {
     class Game
     {
-
+        //Store store;  
+        //public Game()
+        //{
         Store store = new Store();
         Player player = new Player();
         Inventory inventory = new Inventory();
+        Weather weather = new Weather();
+        //}
+
 
         public int gameLength = 7;
         public int gameDay;
@@ -26,32 +31,38 @@ namespace LemonadeStand
             
         }
 
-        public void MainMenu()
+         public void MainMenu()
         {
 
             Console.Clear();
             Console.WriteLine("Welcome " + name);
             Console.WriteLine("It is currently day: " + gameDay);
-            Console.WriteLine("GAME MENU\n========\nPlease choose an option below:\n'Store', 'Inventory', 'Money'. 'Start Day'");
+            Console.WriteLine("GAME MENU\n=========\nPlease choose an option below:\n'Store', 'Inventory', 'Money', 'Check Weather', 'Start Day'");
             string menuChoice = Console.ReadLine().ToLower();
            
 
             switch (menuChoice)
             {
                 case "store":
-                   // Store.ShopMenu(inventory, player);
+                    store.ShopMenu(inventory);
                     Console.WriteLine();
                     Console.ReadLine();
                     MainMenu();
                     break;
                 case "inventory":
-                    inventory.ShowItems();
+                    inventory.ShowItems(inventory);
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
                     break;
                 case "money":
-                    inventory.ShowMoney();
+                    inventory.ShowMoney(inventory);
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    MainMenu();
+                    break;
+                case "check weather":
+                    weather.DisplayTemperature();
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
@@ -61,21 +72,32 @@ namespace LemonadeStand
                     DayPhase();
                     break;
                 default:
-                Console.WriteLine("Try again!");
-                MainMenu();
+                    Console.WriteLine("Try again!");
+                    Console.ReadKey();
+                    MainMenu();
                 break;
             }
         }
 
+     
+
+        public static void check()
+        {
+            //CheckInventory();
+        }
+        
+
+        public void CheckInventory()
+        {
+           // inventory.ShowItems();
+
+        }
 
         public void DayPhase()
         {
             if (gameDay < gameLength)
             {
                 Day day = new Day();
-
-               
-
 
 
 
