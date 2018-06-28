@@ -25,6 +25,7 @@ namespace LemonadeStand
         public void Start()
         {
             name = player.playerName();
+            player.inventory.SetStartMoney();
             //Inventory inventory = player.GetInventory();
             gameDay = 1;
             MainMenu(/*player.inventory*/);
@@ -50,13 +51,13 @@ namespace LemonadeStand
                     MainMenu();
                     break;
                 case "inventory":
-                    player.inventory.ShowItems(player.inventory);
+                    player.inventory.ShowItems(player);
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
                     break;
                 case "money":
-                    player.inventory.ShowMoney(player.inventory);
+                    player.inventory.ShowMoney(player);
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();

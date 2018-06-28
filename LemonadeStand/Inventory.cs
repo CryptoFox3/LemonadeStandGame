@@ -31,24 +31,24 @@ namespace LemonadeStand
             return money = 20.00;
         }
 
-        public double AddMoney(double moneyToAdd, Inventory inventory)
+        public double AddMoney(double moneyToAdd, Player player)
         {
-            inventory.money = inventory.money + moneyToAdd;
-            return inventory.money;
+            player.inventory.money = player.inventory.money + moneyToAdd;
+            return player.inventory.money;
         }
 
-        public double RemoveMoney(double moneyToRemove, Inventory inventory)
+        public double RemoveMoney(double moneyToRemove, Player player)
         {
-            inventory.money = inventory.money - moneyToRemove;
-            return inventory.money;
+            player.inventory.money = player.inventory.money - moneyToRemove;
+            return player.inventory.money;
         }
 
-        public void ShowMoney(Inventory inventory)
+        public void ShowMoney(Player player)
         {
-            Console.WriteLine("Your current balance is: " + inventory.money);
+            Console.WriteLine("Your current balance is: " + player.inventory.money);
         }
 
-        public void ShowItems(Inventory inventory)
+        public void ShowItems(Player player)
         {
             Console.WriteLine($"Your current inventory is: \n Cups: {cups}\n Ice: {ice}\n Sugar: {sugar}\n Lemons {lemon}");
         }

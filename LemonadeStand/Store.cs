@@ -33,32 +33,32 @@ namespace LemonadeStand
             {
                 case "buy cups":
                     //Console.WriteLine();
-                    BuyCup(player.inventory, cupCost);
+                    BuyCup(player, cupCost);
                     Console.ReadLine();
                     ShopMenu(player);
                     break;
                 case "buy ice":
-                    BuyIce(player.inventory, iceCost);
+                    BuyIce(player, iceCost);
                     Console.ReadLine();
                     ShopMenu(player);
                     break;
                 case "buy sugar":
-                    BuySugar(player.inventory, sugarCost);
+                    BuySugar(player, sugarCost);
                     Console.ReadLine();
                     ShopMenu(player);
                     break;
                 case "buy lemons":
-                    BuyLemon(player.inventory, lemonCost);
+                    BuyLemon(player, lemonCost);
                     Console.ReadLine();
                     ShopMenu(player);
                     break;
                 case "inventory":
-                    player.inventory.ShowItems(player.inventory);
+                    player.inventory.ShowItems(player);
                     Console.ReadKey();
                     ShopMenu(player);
                     break;
                 case "money":
-                    player.inventory.ShowMoney(player.inventory);
+                    player.inventory.ShowMoney(player);
                     Console.WriteLine();
                     Console.ReadKey();
                     ShopMenu(player);
@@ -74,7 +74,7 @@ namespace LemonadeStand
         }
 
 
-        public void BuyCup(Inventory inventory, double cupCost)
+        public void BuyCup(Player player, double cupCost)
         {
             Console.WriteLine($"Cups cost: {cupCost} \n How many would you like to buy?");
             double boughtCups = Convert.ToDouble(Console.ReadLine());
@@ -82,13 +82,13 @@ namespace LemonadeStand
             double moneyToRemove = boughtCups * cupCost;
             Console.WriteLine($"You have bought {boughtCups} cups for {moneyToRemove} dollar(s)");
             Console.ReadLine();
-            inventory.RemoveMoney(moneyToRemove, inventory);
+            player.inventory.RemoveMoney(moneyToRemove, player);
 
-            inventory.cups = Convert.ToInt32(inventory.cups + boughtCups);
+            player.inventory.cups = Convert.ToInt32(player.inventory.cups + boughtCups);
             //ShopMenu(inventory);
         }
 
-        public void BuyIce(Inventory inventory, double iceCost)
+        public void BuyIce(Player player, double iceCost)
         {
             Console.WriteLine($"Ice costs: {iceCost} \n How much would you like to buy?");
             double boughtIce = Convert.ToInt32(Console.ReadLine());
@@ -96,13 +96,13 @@ namespace LemonadeStand
             double moneyToRemove = boughtIce * iceCost;
             Console.WriteLine($"You have bought {boughtIce} ice for {moneyToRemove} dollar(s)");
             Console.ReadLine();
-            inventory.RemoveMoney(moneyToRemove, inventory);
+            player.inventory.RemoveMoney(moneyToRemove, player);
 
-            inventory.ice = Convert.ToInt32(inventory.ice + boughtIce);
+            player.inventory.ice = Convert.ToInt32(player.inventory.ice + boughtIce);
             //ShopMenu(inventory);
         }
 
-        public void BuySugar(Inventory inventory, double cupCost)
+        public void BuySugar(Player player, double cupCost)
         {
             Console.WriteLine($"Sugars cost: {sugarCost} \n How many would you like to buy?");
             double boughtSugar = Convert.ToDouble(Console.ReadLine());
@@ -110,12 +110,12 @@ namespace LemonadeStand
             double moneyToRemove = boughtSugar * sugarCost;
             Console.WriteLine($"You have bought {boughtSugar} sugar for {moneyToRemove} dollars()");
             Console.ReadLine();
-            inventory.RemoveMoney(moneyToRemove, inventory);
+            player.inventory.RemoveMoney(moneyToRemove, player);
 
-            inventory.cups = Convert.ToInt32(inventory.sugar + boughtSugar);
+            player.inventory.cups = Convert.ToInt32(player.inventory.sugar + boughtSugar);
             //ShopMenu(inventory);
         }
-        public void BuyLemon(Inventory inventory, double cupCost)
+        public void BuyLemon(Player player, double cupCost)
         {
             Console.WriteLine($"Lemons cost: {cupCost} \n How many would you like to buy?");
             double boughtLemons = Convert.ToDouble(Console.ReadLine());
@@ -123,9 +123,9 @@ namespace LemonadeStand
             double moneyToRemove = boughtLemons * lemonCost;
             Console.WriteLine($"You have bought {boughtLemons} cups for {moneyToRemove} dollar(s)");
             Console.ReadLine();
-            inventory.RemoveMoney(moneyToRemove, inventory);
+            player.inventory.RemoveMoney(moneyToRemove, player);
 
-            inventory.cups = Convert.ToInt32(inventory.lemon + boughtLemons);
+            player.inventory.cups = Convert.ToInt32(player.inventory.lemon + boughtLemons);
             //ShopMenu(inventory);
         }
 
