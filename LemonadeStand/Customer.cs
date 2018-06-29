@@ -21,8 +21,6 @@ namespace LemonadeStand
             
         }
 
-       
-
         public void BuyChance()
         {
             int min = 42;

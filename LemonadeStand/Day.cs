@@ -9,8 +9,8 @@ namespace LemonadeStand
     class Day
     {
 
-      
-        List<Customer> customers;
+
+        List<Customer> customers = new List<Customer>();
         public Weather weather = new Weather();
         RandomNumber RNG = new RandomNumber();
         
@@ -51,17 +51,22 @@ namespace LemonadeStand
 
         }
 
+
+
+
         public void StartDay()
         {
             weather.WeatherToday();
             GenerateCustomer();
+            Sales();
 
         }
 
         public void Sales()
         {
-
-
+            Console.WriteLine(customers.Count());
+            Console.ReadKey();
+            customers.Clear();
 
         }
 

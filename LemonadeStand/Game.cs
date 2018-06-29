@@ -96,7 +96,7 @@ namespace LemonadeStand
             {
 
 
-
+                Day.StartDay();
                 NextDay();
             }
 
