@@ -17,7 +17,7 @@ namespace LemonadeStand
 
         public Customer()
         {
-            GenerateCustomer();
+            
             
         }
 

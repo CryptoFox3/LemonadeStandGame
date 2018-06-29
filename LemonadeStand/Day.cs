@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Day
     {
 
-        //Customer Customer = new Customer();
+      
         List<Customer> customers;
         public Weather weather = new Weather();
         RandomNumber RNG = new RandomNumber();
@@ -17,7 +17,8 @@ namespace LemonadeStand
 
         public Day()
         {
-           
+
+            
         }
 
         public void GenerateCustomer()
@@ -44,8 +45,7 @@ namespace LemonadeStand
             int numberOfCustomers = RNG.RandomNumberGenerator(min, max);
 
             for (int i = 0; i < numberOfCustomers; i++)
-            {
-               
+            {      
                 customers.Add(new Customer());
             }
 
@@ -53,7 +53,8 @@ namespace LemonadeStand
 
         public void StartDay()
         {
-            
+            weather.WeatherToday();
+            GenerateCustomer();
 
         }
 

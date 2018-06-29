@@ -8,14 +8,12 @@ namespace LemonadeStand
 {
     class Game
     {
-        //Store store;  
-        //public Game()
-        //{
+        
         Store store = new Store();
         Player player = new Player();
         Day Day = new Day();
 
-        //}
+       
 
 
         public int gameLength = 7;
@@ -26,10 +24,8 @@ namespace LemonadeStand
         {
             name = player.playerName();
             player.inventory.SetStartMoney();
-            Day.weather.WeatherToday();
-            //Inventory inventory = player.GetInventory();
+            Day.StartDay();
             gameDay = 1;
-            
             MainMenu();
             
         }
@@ -87,11 +83,6 @@ namespace LemonadeStand
 
      
 
-        public static void check()
-        {
-            //CheckInventory();
-        }
-        
 
         public void CheckInventory()
         {
@@ -103,12 +94,10 @@ namespace LemonadeStand
         {
             if (gameDay < gameLength)
             {
-                Day Day = new Day();
 
 
 
-                gameDay++;
-                MainMenu();
+                NextDay();
             }
 
             else
@@ -117,6 +106,13 @@ namespace LemonadeStand
             }
 
                 
+        }
+
+        public void NextDay()
+        {
+            Day Day = new Day();
+            gameDay++;
+            MainMenu();
         }
 
 
