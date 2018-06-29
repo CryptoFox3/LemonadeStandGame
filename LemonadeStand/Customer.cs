@@ -9,25 +9,32 @@ namespace LemonadeStand
     class Customer
     {
 
-        
-        
+
+        RandomNumber RNG = new RandomNumber();
+
         public int buyChance;
+
 
         public Customer()
         {
+            GenerateCustomer();
             
-            
-
         }
 
-        public Customer(Random r)
+       
+
+        public void BuyChance()
         {
-            buyChance = r.Next(40, 61);
+            int min = 42;
+            int max = 60;
+            buyChance = RNG.RandomNumberGenerator(min, max);
         }
        
 
-        public void buyChanceWeather()
+
+        public void BuyChanceWeather()
         {
+
 
         }
 

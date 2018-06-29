@@ -8,9 +8,9 @@ namespace LemonadeStand
 {
     class Weather
     {
-        int temperatureToday;
-        int windSpeed;
-        bool chanceOfRain;
+        public int temperatureToday;
+        
+        public bool chanceOfRain;
 
         RandomNumber RNG = new RandomNumber();
 
