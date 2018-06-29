@@ -8,22 +8,46 @@ namespace LemonadeStand
 {
     class Day
     {
-        Weather WeatherToday = new Weather();
+        List<Customer> customers;
         //Customer Customer = new Customer();
 
+        public Weather weather = new Weather();
+        int temperature;
+
+        public Day()
+        {
+            
+        }
+
+        public void StartDay()
+        {
+            
+
+        }
 
         public void Sales()
         {
 
-        }
-
-
-        public void WeatherEffect() 
-        {
-
 
 
         }
+
+
+
+
+
+        //public void GenerateCustomers()
+        // {
+
+        // }
+
+
+        //  public void WeatherEffect() 
+        //  {
+
+
+
+        // }
 
 
 

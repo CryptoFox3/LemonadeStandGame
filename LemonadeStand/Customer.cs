@@ -9,7 +9,30 @@ namespace LemonadeStand
     class Customer
     {
 
-        string name;
+        
+        
+        public int buyChance;
+
+        public Customer()
+        {
+            
+            
+
+        }
+
+        public Customer(Random r)
+        {
+            buyChance = r.Next(40, 61);
+        }
+       
+
+        public void buyChanceWeather()
+        {
+
+        }
+
+
+
 
 
 

@@ -13,8 +13,8 @@ namespace LemonadeStand
         //{
         Store store = new Store();
         Player player = new Player();
-        
-        Weather weather = new Weather();
+        Day Day = new Day();
+
         //}
 
 
@@ -26,19 +26,21 @@ namespace LemonadeStand
         {
             name = player.playerName();
             player.inventory.SetStartMoney();
+            Day.weather.WeatherToday();
             //Inventory inventory = player.GetInventory();
             gameDay = 1;
-            MainMenu(/*player.inventory*/);
+            
+            MainMenu();
             
         }
 
-         public void MainMenu(/*Inventory inventory*/)
+         public void MainMenu()
         {
 
             Console.Clear();
             Console.WriteLine("Welcome " + name);
             Console.WriteLine("It is currently day: " + gameDay);
-            Console.WriteLine("GAME MENU\n=========\nPlease choose an option below:\n'Store', 'Inventory', 'Money', 'Check Weather', 'Start Day'");
+            Console.WriteLine("GAME MENU\n=========\nPlease choose an option below:\n'Store', 'Inventory', 'Money', 'Check Weather', 'Start Day', 'Exit'");
             string menuChoice = Console.ReadLine().ToLower();
            
 
@@ -63,7 +65,7 @@ namespace LemonadeStand
                     MainMenu();
                     break;
                 case "check weather":
-                    weather.DisplayTemperature();
+                    Day.weather.DisplayWeather();
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
@@ -71,6 +73,9 @@ namespace LemonadeStand
                 case "start day":
                     Console.WriteLine("Not yet implimented");
                     DayPhase(player.inventory);
+                    break;
+                case "exit":
+                    EndGame();
                     break;
                 default:
                     Console.WriteLine("Try again!");
@@ -98,7 +103,7 @@ namespace LemonadeStand
         {
             if (gameDay < gameLength)
             {
-                Day day = new Day();
+                Day Day = new Day();
 
 
 

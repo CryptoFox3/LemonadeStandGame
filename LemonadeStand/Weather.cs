@@ -8,52 +8,58 @@ namespace LemonadeStand
 {
     class Weather
     {
-        int temperature;
+        int temperatureToday;
         int windSpeed;
-        int rain;
+        bool chanceOfRain;
 
+        RandomNumber RNG = new RandomNumber();
 
-
-
-
-        public static int GetTemperatureToday()
+        public Weather()
         {
-
-            Random randomTemp = new Random();
-            int result = randomTemp.Next(50, 100);
-            return result;
+            
 
         }
 
-        public void DisplayTemperature()
+        public void WeatherToday()
+        {
+            temperatureToday = GetTemperatureToday();
+            chanceOfRain = GetRainCondition();
+        }   
+
+        public void DisplayWeather()
+        {
+            Console.WriteLine($"The temperature today is {temperatureToday}");
+        }
+
+        public int GetTemperatureToday()
         {
 
-            temperature = GetTemperatureToday();
+            int minTemp = 55;
+            int maxTemp = 100;
+            temperatureToday = RNG.RandomNumberGenerator(minTemp, maxTemp);
+            return temperatureToday;
+        }
 
-            if (temperature > 90)
+        public bool GetRainCondition()
+        {
+
+            int min = 0;
+            int max = 100;
+            int result = RNG.RandomNumberGenerator(min, max);
+            if(result >= 80)
             {
-                Console.WriteLine($"It will be very hot today. The forecast is: {temperature} degrees!");
-            }
-            else if (temperature > 80)
-            {
-                Console.WriteLine($"It will be hot today. The forecast is: {temperature} degrees");
-            }
-            else if (temperature > 70)
-            {
-                Console.WriteLine($"It will be calm today. The forecast is: {temperature} degrees");
-            }
-            else if (temperature > 60)
-            {
-                Console.WriteLine($"It will be cool today. The forecast is: {temperature} degrees");
+            return true;
             }
             else
             {
-                Console.WriteLine($"It will be cold today. The forecast is: {temperature} degrees");
+            return false;
             }
-
-
         }
+
+        
+        
 
 
     }
 }
+

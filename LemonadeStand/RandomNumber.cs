@@ -8,5 +8,20 @@ namespace LemonadeStand
 {
     class RandomNumber
     {
+        Random r = new Random();
+
+        public RandomNumber()
+        {
+            
+        }
+        
+
+        public int RandomNumberGenerator(int min, int max)
+        {
+            Random r = new Random();
+            int output = r.Next(min, max); 
+            return output;
+        }
+
     }
 }

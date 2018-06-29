@@ -101,6 +101,7 @@ namespace LemonadeStand
             player.inventory.ice = Convert.ToInt32(player.inventory.ice + boughtIce);
             //ShopMenu(inventory);
         }
+        
 
         public void BuySugar(Player player, double cupCost)
         {
@@ -131,10 +132,6 @@ namespace LemonadeStand
 
 
 
-        public static void BuySugar()
-        {
-
-        }
     }
 }
 
