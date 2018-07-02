@@ -23,7 +23,7 @@ namespace LemonadeStand
         public void ShopMenu(Player player)
         {
             Console.Clear();
-            //  Console.WriteLine("Welcome to the shop " + name);
+            Console.WriteLine("Welcome to the shop " + player.Name);
 
             Console.WriteLine("SHOP MENU\n========\nPlease choose an option below:\n'Buy Cups', 'Buy Ice', 'Buy Sugar', 'Buy Lemons'  'Inventory', 'Money'. 'Main Menu'");
             string menuChoice = Console.ReadLine().ToLower();
@@ -84,7 +84,7 @@ namespace LemonadeStand
             Console.ReadLine();
             player.inventory.RemoveMoney(moneyToRemove, player);
 
-            player.inventory.cups = Convert.ToInt32(player.inventory.cups + boughtCups);
+            player.inventory.cup = Convert.ToInt32(player.inventory.cup + boughtCups);
             //ShopMenu(inventory);
         }
 
@@ -113,7 +113,7 @@ namespace LemonadeStand
             Console.ReadLine();
             player.inventory.RemoveMoney(moneyToRemove, player);
 
-            player.inventory.cups = Convert.ToInt32(player.inventory.sugar + boughtSugar);
+            player.inventory.sugar = Convert.ToInt32(player.inventory.sugar + boughtSugar);
             //ShopMenu(inventory);
         }
         public void BuyLemon(Player player, double cupCost)
@@ -126,7 +126,7 @@ namespace LemonadeStand
             Console.ReadLine();
             player.inventory.RemoveMoney(moneyToRemove, player);
 
-            player.inventory.cups = Convert.ToInt32(player.inventory.lemon + boughtLemons);
+            player.inventory.lemon = Convert.ToInt32(player.inventory.lemon + boughtLemons);
             //ShopMenu(inventory);
         }
 

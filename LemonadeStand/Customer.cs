@@ -21,20 +21,23 @@ namespace LemonadeStand
             
         }
 
-        public void BuyChance()
+        public int BuyChance()
         {
             int min = 42;
             int max = 60;
             buyChance = RNG.RandomNumberGenerator(min, max);
+            return buyChance;
         }
+
        
+        
 
+        //public int BuyChanceWeatherEffect(int buyChance)
+        //{
+        //    if ()
 
-        public void BuyChanceWeather()
-        {
-
-
-        }
+            //return buyChance;
+        //}
 
 
 

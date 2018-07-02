@@ -9,22 +9,17 @@ namespace LemonadeStand
     class Inventory
     {
 
-
-        public int ice;
-        public int cups;
-        public int sugar;
-        public int lemon;
-        public double money;
-
-
+        public int ice { get; set; }
+        public int cup { get; set; }
+        public int sugar { get; set; }
+        public int lemon { get; set; }
+        public int lemonade { get; set; }
+        public double money { get; set; }
 
 
-        public void AddLemon()
-        {
 
-            //Lemon lemon = new Lemon { Age = 0, isRipe = true };
 
-        }
+       
 
         public double SetStartMoney()
         {
@@ -43,6 +38,13 @@ namespace LemonadeStand
             return player.inventory.money;
         }
 
+        //public int RemoveItem(int amountToRemove, Player player)
+        //{
+
+            
+      //      return player.inventory;
+      //  }
+
         public void ShowMoney(Player player)
         {
             Console.WriteLine("Your current balance is: " + player.inventory.money);
@@ -50,7 +52,7 @@ namespace LemonadeStand
 
         public void ShowItems(Player player)
         {
-            Console.WriteLine($"Your current inventory is: \n Cups: {cups}\n Ice: {ice}\n Sugar: {sugar}\n Lemons {lemon}");
+            Console.WriteLine($"Your current inventory is: \n Cups: {cup}\n Ice: {ice}\n Sugar: {sugar}\n Lemons {lemon}");
         }
 
     }

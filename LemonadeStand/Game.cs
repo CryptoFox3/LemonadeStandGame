@@ -22,9 +22,9 @@ namespace LemonadeStand
 
         public void Start()
         {
-            name = player.playerName();
+            player.Name = player.playerName();
             player.inventory.SetStartMoney();
-            Day.StartDay();
+            Day.FirstDay(player);
             gameDay = 1;
             MainMenu();
             
@@ -36,7 +36,7 @@ namespace LemonadeStand
             Console.Clear();
             Console.WriteLine("Welcome " + name);
             Console.WriteLine("It is currently day: " + gameDay);
-            Console.WriteLine("GAME MENU\n=========\nPlease choose an option below:\n'Store', 'Inventory', 'Money', 'Check Weather', 'Start Day', 'Exit'");
+            Console.WriteLine("GAME MENU\n=========\nPlease choose an option below:\n'Store', 'Inventory', 'Recipe', 'Change Recipe', 'Money', 'Sale Price', 'Weather Forecast', 'Start Day', 'Exit'");
             string menuChoice = Console.ReadLine().ToLower();
            
 
@@ -54,13 +54,44 @@ namespace LemonadeStand
                     Console.ReadKey();
                     MainMenu();
                     break;
+                case "recipe":
+                    player.recipe.ShowRecipe(player.recipe, player);
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    MainMenu();
+                    break;
+                case "change recipe":
+                    player.recipe.ChangeRecipe(player.recipe, player);
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    MainMenu();
+                    break;
+                case "sale price":
+                    Console.WriteLine($"Your sale price is currently {player.salePrice} per cup of lemonade. Please type 'change sale price' to enter a new sale price");
+                    Console.ReadKey();
+                    MainMenu();
+                    break;
+                case "change sale price":
+                    player.ChangeSalePrice();
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    MainMenu();
+                    break;
                 case "money":
                     player.inventory.ShowMoney(player);
                     Console.WriteLine();
                     Console.ReadKey();
                     MainMenu();
                     break;
-                case "check weather":
+                case "cheat money":
+                    Console.WriteLine($"Money Cheat: {player.inventory.money} is the current balance. Enter the amount you would like to add to your balance.");
+                    double moneyToAdd = Convert.ToDouble(Console.ReadLine());
+                    player.inventory.AddMoney(moneyToAdd, player);
+                    Console.WriteLine($"Your balance is now {player.inventory.money}");
+                    Console.ReadKey();
+                    MainMenu();
+                    break;
+                case "weather forecast":
                     Day.weather.DisplayWeather();
                     Console.WriteLine();
                     Console.ReadKey();
@@ -96,7 +127,7 @@ namespace LemonadeStand
             {
 
 
-                Day.StartDay();
+                Day.StartDay(player);
                 NextDay();
             }
 

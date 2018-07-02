@@ -10,18 +10,23 @@ namespace LemonadeStand
     {
 
 
-        List<Customer> customers = new List<Customer>();
+        public List<Customer> customers = new List<Customer>();
+        public Customer customer = new Customer();
         public Weather weather = new Weather();
-        RandomNumber RNG = new RandomNumber();
+        public RandomNumber RNG = new RandomNumber();
+        public int sales;
+        
         
 
         public Day()
         {
 
-            
+
         }
 
-        public void GenerateCustomer()
+
+
+        public void GenerateCustomers()
         {
             int min = 80;
             int max = 150;
@@ -45,8 +50,8 @@ namespace LemonadeStand
             int numberOfCustomers = RNG.RandomNumberGenerator(min, max);
 
             for (int i = 0; i < numberOfCustomers; i++)
-            {      
-                customers.Add(new Customer());
+            {
+                customers.Add(customer);
             }
 
         }
@@ -54,27 +59,60 @@ namespace LemonadeStand
 
 
 
-        public void StartDay()
+        public void StartDay(Player player)
         {
             weather.WeatherToday();
-            GenerateCustomer();
-            Sales();
+            GenerateCustomers();
+            DidCustomerBuy(player);
+            Sales(player);
+
+            
 
         }
 
-        public void Sales()
+        public void FirstDay(Player player)
         {
-            Console.WriteLine(customers.Count());
-            Console.ReadKey();
-            customers.Clear();
+            weather.WeatherToday();
+        }
+
+        public void Sales(Player player)
+        {
+            Console.WriteLine($"Out of {customers.Count()} potential customers, we made {sales} total sales today.");
+            double revenue = player.salePrice * sales;
+            Console.WriteLine($"This is equal to a total revenue of {revenue}");
+            Console.ReadLine();
+
 
         }
 
+        public void DidCustomerBuy(Player player)
 
+        {
 
+            int min = 0;
+            int max = 100;
 
-
+            if(player.inventory.lemonade > 0){ }
+            for (int i = 0; i < customers.Count; i++)
+                if (customer.buyChance >= RNG.RandomNumberGenerator(min, max))
+                {
+                    player.inventory.lemonade--;
+                    sales++;
+                }
       
+            else{
+                player.recipe.MakeLemonade(player);
+            }
+
+        }
+
+        
+
+
+
+
+
+
 
 
 
@@ -82,8 +120,9 @@ namespace LemonadeStand
 
 
     }
+}
 
+    
     
 
 
-}
