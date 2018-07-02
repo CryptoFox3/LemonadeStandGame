@@ -89,19 +89,22 @@ namespace LemonadeStand
 
         {
 
-            int min = 0;
+            int min = 1;
             int max = 100;
 
-            if(player.inventory.lemonade > 0){ }
-            for (int i = 0; i < customers.Count; i++)
-                if (customer.buyChance >= RNG.RandomNumberGenerator(min, max))
-                {
-                    player.inventory.lemonade--;
-                    sales++;
-                }
-      
-            else{
+            if (player.inventory.lemonade > 1)
+            {
+                for (int i = 0; i < customers.Count; i++)
+                    if (customer.buyChance >= RNG.RandomNumberGenerator(min, max))
+                    {
+                        player.inventory.lemonade--;
+                        sales++;
+                    }
+            }
+            else
+            {
                 player.recipe.MakeLemonade(player);
+                DidCustomerBuy(player);
             }
 
         }
