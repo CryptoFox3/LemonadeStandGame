@@ -63,6 +63,10 @@ namespace LemonadeStand
                     Console.ReadKey();
                     ShopMenu(player);
                     break;
+                case "cheat items":
+                    player.inventory.CheatItems(player);
+                    ShopMenu(player);
+                    break;
                 case "main menu":
                     //MainMenu();
                     break;
@@ -122,7 +126,7 @@ namespace LemonadeStand
             double boughtLemons = Convert.ToDouble(Console.ReadLine());
 
             double moneyToRemove = boughtLemons * lemonCost;
-            Console.WriteLine($"You have bought {boughtLemons} cups for {moneyToRemove} dollar(s)");
+            Console.WriteLine($"You have bought {boughtLemons} lemons for {moneyToRemove} dollar(s)");
             Console.ReadLine();
             player.inventory.RemoveMoney(moneyToRemove, player);
 

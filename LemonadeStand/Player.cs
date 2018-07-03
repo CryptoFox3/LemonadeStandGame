@@ -13,7 +13,7 @@ namespace LemonadeStand
         public Inventory inventory = new Inventory();
         public Recipe recipe = new Recipe();
         public double salePrice = 0.20;
-        
+        public int totalProfit;
 
         public string playerName()
         {
@@ -21,21 +21,7 @@ namespace LemonadeStand
                 
         }
 
-        //============================ CHANGE/CONTINUE
-        public Recipe ChangeRecipe(Recipe recipe)
-        {
-
-            return recipe;
-        }
-        //============================ CHANGE/CONTINUE
-
-        //public Inventory GetInventory()
-        //{
-        //    Inventory inventory = new Inventory();
-        //   return inventory;
-        //}
-
-      
+       
 
         public string GetPlayerName()
         {
@@ -54,7 +40,7 @@ namespace LemonadeStand
             }
             else
             {
-                Console.WriteLine("Sorry! That amount is out of range. Please enter a sale price less than $1");
+                Console.WriteLine("Sorry! That amount is out of range. Please enter a sale price equal to or less than $1.00");
                 ChangeSalePrice();
             }
         }

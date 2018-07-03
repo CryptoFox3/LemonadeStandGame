@@ -18,7 +18,8 @@ namespace LemonadeStand
 
         public int gameLength = 7;
         public int gameDay;
-        public string name;
+       
+        
 
         public void Start()
         {
@@ -34,7 +35,7 @@ namespace LemonadeStand
         {
 
             Console.Clear();
-            Console.WriteLine("Welcome " + name);
+            Console.WriteLine("Welcome " + player.Name);
             Console.WriteLine("It is currently day: " + gameDay);
             Console.WriteLine("GAME MENU\n=========\nPlease choose an option below:\n'Store', 'Inventory', 'Recipe', 'Change Recipe', 'Money', 'Sale Price', 'Weather Forecast', 'Start Day', 'Exit'");
             string menuChoice = Console.ReadLine().ToLower();
@@ -91,6 +92,10 @@ namespace LemonadeStand
                     Console.ReadKey();
                     MainMenu();
                     break;
+                case "cheat items":
+                    player.inventory.CheatItems(player);
+                    MainMenu();
+                    break;
                 case "weather forecast":
                     Day.weather.DisplayWeather();
                     Console.WriteLine();
@@ -98,7 +103,6 @@ namespace LemonadeStand
                     MainMenu();
                     break;
                 case "start day":
-                    Console.WriteLine("Not yet implimented");
                     DayPhase(player.inventory);
                     break;
                 case "exit":
@@ -112,14 +116,7 @@ namespace LemonadeStand
             }
         }
 
-     
-
-
-        public void CheckInventory()
-        {
-           // inventory.ShowItems();
-
-        }
+    
 
         public void DayPhase(Inventory inventory)
         {
@@ -128,6 +125,7 @@ namespace LemonadeStand
 
 
                 Day.StartDay(player);
+
                 NextDay();
             }
 

@@ -17,7 +17,7 @@ namespace LemonadeStand
 
         public Customer()
         {
-            
+            buyChance = BuyChance();
             
         }
 
@@ -28,29 +28,6 @@ namespace LemonadeStand
             buyChance = RNG.RandomNumberGenerator(min, max);
             return buyChance;
         }
-
-       
-        
-
-        //public int BuyChanceWeatherEffect(int buyChance)
-        //{
-        //    if ()
-
-            //return buyChance;
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
 

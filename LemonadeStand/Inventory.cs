@@ -38,13 +38,6 @@ namespace LemonadeStand
             return player.inventory.money;
         }
 
-        //public int RemoveItem(int amountToRemove, Player player)
-        //{
-
-            
-      //      return player.inventory;
-      //  }
-
         public void ShowMoney(Player player)
         {
             Console.WriteLine("Your current balance is: " + player.inventory.money);
@@ -53,6 +46,18 @@ namespace LemonadeStand
         public void ShowItems(Player player)
         {
             Console.WriteLine($"Your current inventory is: \n Cups: {cup}\n Ice: {ice}\n Sugar: {sugar}\n Lemons {lemon}");
+        }
+
+        public void CheatItems(Player player)
+        {
+            Console.WriteLine("Item cheat: Please enter how many of each item you would like to add to your inventory:");
+            int cheatAmount = Convert.ToInt32(Console.ReadLine());
+            lemon = lemon + cheatAmount;
+            cup = cup + cheatAmount;
+            ice = ice + cheatAmount;
+            sugar = sugar + cheatAmount;
+            ShowItems(player);
+            Console.ReadKey();
         }
 
     }

@@ -15,6 +15,7 @@ namespace LemonadeStand
         public Weather weather = new Weather();
         public RandomNumber RNG = new RandomNumber();
         public int sales;
+        public int didNotBuy;
         
         
 
@@ -77,12 +78,21 @@ namespace LemonadeStand
 
         public void Sales(Player player)
         {
-            Console.WriteLine($"Out of {customers.Count()} potential customers, we made {sales} total sales today.");
+            Console.WriteLine($"Out of {customers.Count()} potential customers, we made {sales} total sales today. {didNotBuy} potential customers did not buy our lemonade");
             double revenue = player.salePrice * sales;
+            player.totalProfit = player.totalProfit + Convert.ToInt32(revenue);
             Console.WriteLine($"This is equal to a total revenue of {revenue}");
             Console.ReadLine();
 
 
+
+        }
+
+        public void TotalSales(Player player)
+        {
+            Console.Clear();
+            Console.WriteLine("Our running total of all sales is: " + player.totalProfit);
+            Console.ReadLine();
         }
 
         public void DidCustomerBuy(Player player)
@@ -99,6 +109,10 @@ namespace LemonadeStand
                     {
                         player.inventory.lemonade--;
                         sales++;
+                    }
+                    else
+                    {
+                        didNotBuy++;
                     }
             }
             else
